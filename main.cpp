@@ -1,6 +1,9 @@
 #include <iostream>
 #include "point2D.hpp"
 #include "polygone.hpp"
+#include "parcelle.hpp"
+#include "carte.hpp"
+
 using namespace std;
 
 int main() {
@@ -51,7 +54,10 @@ int main() {
   cout << "POLYGONE1:\n" << *poly1 <<endl;
   cout << "POLYGONE2:\n" << *poly2 <<endl;
   cout << "POLYGONE3:\n" << *poly3 <<endl;
+
+  //Test carte
+  cout <<"fichier texte hamdullilah"<<endl;
+  carte = new carte();
+  carte.lecturefichier("Parcelles_short.txt");
+
 }
-
-
-

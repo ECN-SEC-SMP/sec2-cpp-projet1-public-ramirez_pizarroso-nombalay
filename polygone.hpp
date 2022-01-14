@@ -22,13 +22,17 @@ public:
   polygone();
   polygone(vector<point2D<T>> listeSommets);
   polygone(const polygone<T> &poly);
+
   //accesseurs
   vector<point2D<T>> getSommets() const;
+
   //mutateurs
   void setSommets(vector<point2D<T>>);
+
   //méthodes
   void addPoint(point2D<T>);
   void translate(T x, T y);
+  
   //surcharge opérateur
   friend std::ostream& operator<< <T>(std::ostream &, polygone const&);
 };
@@ -65,11 +69,10 @@ void polygone<T>::translate(T x, T y){
 template<typename T>
 std::ostream& operator<<(std::ostream &o, polygone<T> const &poly){
   vector<point2D<T>> listeSommets = poly.getSommets();
-  int i=0;
   for (typename vector<point2D<T>>::iterator it = listeSommets.begin(); it != listeSommets.end(); ++it){
-     o << "s" << i << ": x=" << it->getX() << " y=" << it->getY() << endl;
-     i++;
+     o << "[" << it->getX() << ":" << it->getY() << "] ";
   }
+  o << endl;
   return o;
 }
 
