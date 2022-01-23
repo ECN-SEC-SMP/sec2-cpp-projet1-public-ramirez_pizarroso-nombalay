@@ -6,11 +6,11 @@
 #include "ZU.hpp"
 using namespace std;
 
-ZU::ZU(){
+ZU::ZU(): constructible(){
     this->type = "ZU";
 }
 
-ZU::ZU(int num, string proprio, polygone<int> p, int p_const, int s_construite): constructible(num, proprio, p, p_const){
+ZU::ZU(int num, string proprio, polygone<int> p, int p_const, float s_construite): constructible(num, proprio, p, p_const){
     this->type = "ZU";
     this->surface_construite = s_construite;
 }

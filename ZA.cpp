@@ -3,7 +3,7 @@
 #include "ZA.hpp"
 using namespace std;
 
-ZA::ZA(){
+ZA::ZA():ZN(){
     this->type = "ZA";
 }
 

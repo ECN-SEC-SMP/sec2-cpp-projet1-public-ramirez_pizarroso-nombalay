@@ -18,7 +18,6 @@ public:
     ~ZAU();
     //mutateur
     void setType(string type);
-    void setPourcentageConstructible(int pourcentage);
     //méthode virtuelle
     float surfaceConstructible() const;
     //surcharge de l'opérateur << pour l'affichage de l'objet

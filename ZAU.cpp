@@ -4,7 +4,7 @@
 #include "ZAU.hpp"
 using namespace std;
 
-ZAU::ZAU(){
+ZAU::ZAU(): constructible(){
     this->type = "ZAU";
 }
 
@@ -19,12 +19,6 @@ ZAU::~ZAU(){}
 void ZAU::setType(string type){
     if(type == "ZAU") {
         this->type = type;
-    }
-}
-
-void ZAU::setPourcentageConstructible(int pourcentage) {
-    if(pourcentage <=100) {
-        this->pConstructible = pourcentage;
     }
 }
 

@@ -78,8 +78,13 @@ float parcelle::calcSurface(polygone<int> calcPoly){
         y = y1;
     }
     surface += (x*y0)-(x0*y);
-    if(surface < 0)
-        surface *= -1;
+    try{
+        if(surface <= 0)
+            throw("Surface de la parcelle négative ou nulle.");
+    }
+    catch(std::string const& err_msg){
+        cout << err_msg << endl;
+    }
     return surface / 2;
 }
 

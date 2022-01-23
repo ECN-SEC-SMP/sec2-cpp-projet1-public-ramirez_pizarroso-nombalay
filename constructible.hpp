@@ -16,6 +16,7 @@ public:
     constructible(int num, string proprio, polygone<int> f, int _pConst);
     //mutateurs
     void setPourcentageConstructible(int pourcentage);
+    //accesseur
     int getPConstructible() const;
     //méthode virtuelle pure pour accéder à la surface constructible de la parcelle
     virtual float surfaceConstructible() const = 0 ;

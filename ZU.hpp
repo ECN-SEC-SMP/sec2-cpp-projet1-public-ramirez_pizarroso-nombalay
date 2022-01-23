@@ -13,14 +13,14 @@ private:
 public:
     //constructeur
     ZU();
-    ZU(int num, string proprio, polygone<int> p, int p_const, int s_construite);
+    ZU(int num, string proprio, polygone<int> p, int p_const, float s_construite);
     ZU(parcelle &parc);
     //destructeur
     ~ZU();
     //mutateur
     void setType(string type);
     void setSurfaceConstruite(float surface);
-    //mutateurs
+    //accesseur
     float getSurfaceConstruite() const;
     //méthode virtuelle
     float surfaceConstructible() const;

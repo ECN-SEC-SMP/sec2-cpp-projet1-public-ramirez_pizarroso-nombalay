@@ -21,9 +21,9 @@ protected:
 
 public:
     //constructeurs
+    parcelle();
     parcelle(int num, string prop, polygone<int> forme);
     parcelle(const parcelle &parc);
-    parcelle();
     // destructeur virtuel
     virtual ~parcelle() = 0;
 

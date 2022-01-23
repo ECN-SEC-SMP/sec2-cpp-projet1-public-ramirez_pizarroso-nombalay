@@ -23,6 +23,10 @@ public:
   polygone(vector<point2D<T>> listeSommets);
   polygone(const polygone<T> &poly);
 
+  //destructeur
+
+  ~polygone();
+
   //accesseurs
   vector<point2D<T>> getSommets() const;
 
@@ -39,6 +43,10 @@ public:
 
 template<typename T>
 polygone<T>::polygone(){
+}
+
+template<typename T>
+polygone<T>::~polygone(){
 }
 
 template<typename T>

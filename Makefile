@@ -4,8 +4,8 @@ clean:
 	rm *.o
 	rm *.out
 
-main.out: main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o
-	g++ -o main.out main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o
+main.out: main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o constructible.o
+	g++ -o main.out main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o constructible.o
 
 main.o: main.cpp polygone.hpp point2D.hpp 
 	g++ -c main.cpp
@@ -27,3 +27,6 @@ ZAU.o: ZAU.cpp ZAU.hpp
 
 ZU.o: ZU.cpp ZU.hpp
 	g++ -c ZU.cpp
+
+constructible.o: constructible.cpp constructible.hpp
+	g++ -c constructible.cpp

@@ -8,6 +8,8 @@ constructible::constructible(int num, string proprio, polygone<int> f, int _pCon
     this->pConstructible = _pConst;
 }
 
+constructible::constructible():parcelle(){}
+
 constructible::constructible(parcelle &parc):parcelle(parc){}
 
 void constructible::setPourcentageConstructible(int pourcentage){

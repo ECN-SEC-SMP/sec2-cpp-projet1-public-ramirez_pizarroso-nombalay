@@ -2,7 +2,7 @@
 #include "point2D.hpp"
 #include "polygone.hpp"
 #include "parcelle.hpp"
-//#include "carte.hpp"
+#include "carte.hpp"
 #include "ZN.hpp"
 #include "ZA.hpp"
 #include "ZAU.hpp"
@@ -11,12 +11,12 @@
 using namespace std;
 
 int main() {
+        cout << "\nBonjour, Plan d'urbanisme simplifié!\n"<< endl;
     cout << "-------------------------Partie 2--------------------------" << endl;
     //création des listes de sommets
     vector<point2D<int>> PointsPoly1;
     vector<point2D<int>> PointsPoly2;
     //polygone
-    cout << "\nBonjour, Plan d'urbanisme simplifié!\n"<< endl;
     //création des points
     point2D<int> p1 (0,2);
     point2D<int> p2 (-2,0);
@@ -76,6 +76,18 @@ int main() {
     cout << *zn2 << endl;
     cout << *zn3 << endl;
 
+    zn3->setForme(*poly3);
+    cout << "setForme: poly3" << endl;
+    cout << *zn3 << endl;
+
+    zn3->setNumero(3);
+    cout << "setNumero: 3" << endl;
+    cout << *zn3 << endl;
+
+    zn3->setProprio("Aubin");
+    cout << "setProprio: Aubin" << endl;
+    cout << *zn3 << endl;
+
     //test za
     cout << "ZA:" << endl;
     ZA *za1 = new ZA();
@@ -112,11 +124,27 @@ int main() {
 
     cout << "-------------------------Partie 5--------------------------" << endl;
     //création carte
-    //carte* carte1;
+    carte* carte1;
+    carte* carte2;
+    carte* carte3;
+    string file1 = "Parcelles_short.txt";
+    string file2 = "Parcelles.txt";
 
     //Test carte
-    cout <<"Fichier texte:\n"<<endl;
-    //carte1 = new carte();
-    //carte1->lecture_fichier("Parcelles_short.txt");
+    carte1 = new carte(file1);
+    cout << "Taille liste parcelle: " << carte1->getListeParcelle().size() << endl;
+    //affichage de la carte 1 à partir du fichier "Parcelles_short.txt": 
+    cout << *carte1 << endl;
+    carte2 = new carte(file2);
+    //affichage de la carte 2 à partir du fichier "Parcelles.txt": 
+    cout << "Taille liste parcelle: " << carte2->getListeParcelle().size() << endl;
+    cout << *carte2 << endl;
+    //test sauvegarde fichier
+    //constructeur par défaut, liste parcelle vide 
+    carte3 = new carte();
+    //On remplis la carte avec 3 parcelles de test utilisées précédemment (pas fonctionnel)
+    carte3->setListeParcelle(za2);
+    carte3->setListeParcelle(zu2);
+    carte3->setListeParcelle(zau3);
+    carte3->savetofile("sauvegarde_carte3.txt");
 }
- 

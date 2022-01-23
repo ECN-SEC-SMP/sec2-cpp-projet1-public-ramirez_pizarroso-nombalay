@@ -5,17 +5,30 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <map>
 #include "parcelle.hpp"
+#include "ZAU.hpp"
+#include "ZN.hpp"
+#include "ZU.hpp"
+#include "ZA.hpp"
 using namespace std;
 
 class carte{
 private:
-    vector<parcelle> listeParcelle;
+    vector<parcelle*> listeParcelle;
     int surface;
 public:
+    //constructeur
+    carte(string file_name);
     carte();
-    void lecture_fichier(const char* file_name);
+    //méthodes
+    void lecture_fichier(string file_name);
+    void savetofile(string file_name);
+    //accesseur
+    vector<parcelle*> getListeParcelle()const;
+    //mutateur
+    void setListeParcelle(parcelle* p);
+    //surcharge de l'opérateur d'affichage
+    friend std::ostream& operator<< (std::ostream &, carte const&);
 };
 
 //parses function to help: find getline, substr, erase
