@@ -60,6 +60,11 @@ vector<point2D<T>> polygone<T>::getSommets() const{
 }
 
 template<typename T>
+void polygone<T>::setSommets(vector<point2D<T>> listeSommets){
+  this->sommets = listeSommets;
+}
+
+template<typename T>
 void polygone<T>::translate(T x, T y){
   for (typename vector<point2D<T>>::iterator it = this->sommets.begin(); it != this->sommets.end(); ++it){
     it->translate(x, y);

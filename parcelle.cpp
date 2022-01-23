@@ -16,7 +16,10 @@ parcelle::parcelle(const parcelle &parc){
     this->numero = parc.getNumero();
     this->proprietaire = parc.getProprietaire();
     this->forme = parc.getForme();
+    this->type = parc.getType();
 }
+
+parcelle::~parcelle() {}
 
 void parcelle::setNumero(int n){
     this->numero = n;
@@ -39,12 +42,17 @@ string parcelle::getProprietaire()const{
     return this->proprietaire;
 }
 
-float parcelle::getSurface() const{
+float parcelle::getSurface(){
+    this->surface = calcSurface(this->forme);
     return this->surface;
 }
 
 polygone<int> parcelle::getForme() const{
     return this->forme;
+}
+
+string parcelle::getType() const{
+    return this->type;
 }
 
 float parcelle::calcSurface(polygone<int> calcPoly){

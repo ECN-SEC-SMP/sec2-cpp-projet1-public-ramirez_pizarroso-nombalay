@@ -8,11 +8,15 @@
 
 class constructible: public parcelle{
 protected:
-    float surface_constructible;
+    int pConstructible;
 public:
     //constructeur
-    constructible(int s_const, int num, string proprio, polygone<int> f);
-    
+    constructible();
+    constructible(parcelle &parc);
+    constructible(int num, string proprio, polygone<int> f, int _pConst);
+    //mutateurs
+    void setPourcentageConstructible(int pourcentage);
+    int getPConstructible() const;
     //méthode virtuelle pure pour accéder à la surface constructible de la parcelle
     virtual float surfaceConstructible() const = 0 ;
 };

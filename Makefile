@@ -4,11 +4,26 @@ clean:
 	rm *.o
 	rm *.out
 
-main.out: main.o parcelle.o
-	g++ -o main.out main.o parcelle.o
+main.out: main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o
+	g++ -o main.out main.o parcelle.o carte.o ZN.o ZA.o ZAU.o ZU.o
 
-main.o: main.cpp polygone.hpp point2D.hpp
+main.o: main.cpp polygone.hpp point2D.hpp 
 	g++ -c main.cpp
 
 parcelle.o: parcelle.cpp parcelle.hpp
 	g++ -c parcelle.cpp
+
+carte.o: carte.cpp carte.hpp
+	g++ -c carte.cpp
+
+ZN.o: ZN.cpp ZN.hpp
+	g++ -c ZN.cpp
+
+ZA.o: ZA.cpp ZA.hpp
+	g++ -c ZA.cpp
+
+ZAU.o: ZAU.cpp ZAU.hpp
+	g++ -c ZAU.cpp
+
+ZU.o: ZU.cpp ZU.hpp
+	g++ -c ZU.cpp
